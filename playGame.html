@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin Flip Game</title>
+    </head>
+    <body>
+        <button onclick="playGame('heads');">Heads</button>
+        <button onclick="playGame('tails');">Tails</button>
+
+        <script>
+            let randomNumber = Math.random();
+            // We can use const here since score is a reference
+            // so we can modify it even if it uses const.
+            let score = JSON.parse(localStorage.getItem('score')) || {
+                wins: 0,
+                losses: 0
+            };
+           
+
+            function playGame(guess){
+                randomNumber = Math.random();
+                let result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+                
+            
+
+                if(guess === 'heads'){
+                    if (result === 'heads'){
+                        alert(`You Picked heads. Coin flip was ${result}. You win!`);
+                        score.wins++;
+                    } else {
+                        alert(`You picked tails. Coin flip was ${result}. You lose!`);
+                        score.losses++;
+                    }
+                } else if (guess === 'tails'){
+                    if (result === 'heads'){
+                        alert(`You picked heads. Coin flip was ${result}. You lose!`);
+                        score.losses++;
+                    }else {
+                       alert(`You picked tails. Coin flip was ${result}. You win!`);
+                       score.wins++;
+                }
+
+            }
+            localStorage.setItem('score', JSON.stringify(score));
+            console.log(`Wins: ${score.wins}, Losses: ${score.losses}`);
+        }
+
+
+        
+        
+
+        </script>
+    </body>
+</html>

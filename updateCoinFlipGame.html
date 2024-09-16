@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin Flip Game</title>
+    </head>
+    <body>
+        <button onclick="pickMove('heads');">Heads</button>
+        <button onclick="pickMove('tails');">Tails</button>
+
+        <script>
+
+            let randomNumber = Math.random();
+
+            function pickMove(move){
+                randomNumber = Math.random();
+                let result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+                if (move === 'heads'){
+                    if (result === 'heads'){
+                        console.log(randomNumber);
+                        console.log(`you picked heads. Coin flip was ${result}. You win!`);
+                    } else {
+                        console.log(randomNumber);
+                        console.log(`you picked heads. Coin flip was ${result}. You lose!`);
+                    }
+
+                } else if (move === 'tails'){
+                    if (result === 'tails'){
+                        console.log(randomNumber);
+                        console.log(`you picked tails. Coin flip was ${result}. You win!`);
+                    } else {
+                        console.log(randomNumber);
+                        console.log(`you picked tails. Coin flip was ${result}. You lose!`);
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>

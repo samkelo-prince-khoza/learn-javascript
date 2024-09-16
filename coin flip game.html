@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin Flip Game</title>
+        <meta charset="uft-8">
+    </head>
+    <body>
+        <button onclick="
+        pickMove('heads');
+          /*const randomNumber = Math.random();
+            let result = '';
+            guess = '';
+
+            if (randomNumber < 0.5) {
+                result = 'heads';
+                alert(`you picked heads. coin flip was ${result}. you win`);
+            } else {
+                result = 'tails';
+                alert(` you picked heads. coin flip was ${result}. you lose`);
+            }*/
+
+        ">heads</button>
+
+        <button onclick="
+        pickMove('tails');
+           /*const randomNumber = Math.random();
+            let result = '';
+
+            if (randomNumber < 0.5) {
+                result = 'heads';
+                alert('you picked tails. coin flip is heads. you lose')
+
+            } else {
+                result = 'tails';
+                alert('you picked tails. coin flip is tails. you win');
+            }*/
+        ">tails</button>
+
+        <script>
+            let randomNumber = Math.random();
+            let result = '';
+
+            function pickMove(move){
+                if (move === 'heads'){
+                randomNumber = Math.random();
+                if (randomNumber < 0.5) {
+                console.log(randomNumber);
+                result = 'heads';
+                alert(`you picked heads. coin flip was ${result}. you win`);
+            } else {
+                randomNumber = Math.random();
+                console.log(randomNumber);
+                result = 'tails';
+                alert(` you picked heads. coin flip was ${result}. you lose`);
+            }
+                } else if (move === 'tails'){
+                if (randomNumber < 0.5) {
+                randomNumber = Math.random();
+                console.log(randomNumber);
+                result = 'heads';
+                alert('you picked tails. coin flip is heads. you lose')
+
+            } else {
+                randomNumber = Math.random();
+                console.log(randomNumber);
+                result = 'tails';
+                alert('you picked tails. coin flip is tails. you win');
+            }
+                }
+            }
+
+        </script>
+    </body>
+</html>

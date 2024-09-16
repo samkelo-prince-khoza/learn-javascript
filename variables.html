@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>variables</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+        <p>Cart quantity</p>
+        <button onclick="
+          console.log(`cart Quantity: ${cartQuantity}`);
+        ">Show quantity</button>
+
+        <button onclick="
+          /*i am not re-assingning the value. i am calling the 
+          variable in the script element which has a value of zero.
+          and substitute the value with one to get one. that value
+          will be saved in the variable in the script element as one.
+          if i call it again by clicking the button, that number one will be added with the one 
+          like this (1) = (1) + 1 = 2; */
+          alert('Product added');
+          console.log(cartQuantity = cartQuantity + 1);
+        ">Add to cart</button>
+
+        <button onclick="
+          alert('product added');
+          console.log(cartQuantity = cartQuantity + 2);
+        ">+2</button>
+
+        <button onclick="
+          alert('product added');
+          console.log(cartQuantity = cartQuantity + 3);
+        ">+3</button>
+
+        <button onclick="
+        alert('reset succesful')
+          console.log('cart was reset');
+          console.log(cartQuantity = 0);
+        ">Reset cart</button>
+    
+        <script>
+            let cartQuantity = 0;
+        </script>
+    </body>
+</html>
