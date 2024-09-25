@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom-text-box-exercise</title>
+        <style>
+
+        </style>
+    </head>
+    <body>
+    <input class="js-text-input" onkeydown="
+        const submitElement = document.querySelector('.js-text-input').value;
+        if (event.key === 'Enter'){
+            document.querySelector('.js-output').innerHTML = `Your name is: ${submitElement}`;
+        }
+        ">
+
+    <button onclick="
+    const submitElement = document.querySelector('.js-text-input').value;
+    document.querySelector('.js-output').innerHTML =   `Your name is: ${submitElement}`;
+    ">Submit</button>
+
+    <p class="js-output"></p>
+
+    </body>
+</html>
