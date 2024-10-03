@@ -3,33 +3,89 @@
     <head>
         <title>rock paper scissors</title>
         <style>
-    
+            body {
+                background-color: rgb(25, 25, 25);
+                color: white;
+                font-family: arial;
+            }
+
+            .title {
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .image-icon {
+                height: 50px;
+            }
+
+            .rock-button {
+                padding: 40px 40px;
+                background-color: transparent;
+                border: 3px solid white;
+                border-radius: 100px;
+                cursor: pointer;
+            }
+
+            .paper-button {
+                padding: 40px 40px;
+                background-color: transparent;
+                border: 3px solid white;
+                border-radius: 100px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+
+            .scissors-button {
+                padding: 40px 40px;
+                background-color: transparent;
+                border: 3px solid white;
+                border-radius: 100px;
+                margin-left: 10px;
+                cursor: pointer;
+            }
+
+            .reset-button {
+                padding: 10px 20px;
+                font-size: 15px;
+                cursor: pointer;
+                border: none;
+            }
+
+            .result {
+                font-weight: bold;
+                font-size: 25px;
+                margin-top: 50px;
+            }
+
+            .score {
+                margin-top: 80px;
+            }
 
         </style>
     </head>
     <body>
-        <p class="rock-paper-scissors">Rock Paper Scissors</p>
+        <p class="title">Rock Paper Scissors</p>
         
-        <button onclick="
+        <button class="rock-button" onclick="
           playGame('rock');
           
-        ">Rock</button>
+        "><img class="image-icon" src="images/rock-emoji.png"></button>
 
-        <button onclick="
+        <button class="paper-button" onclick="
           playGame('paper');
           
-        ">Paper</button>
+        "><img class="image-icon" src="images/paper-emoji.png"></button>
 
-        <button onclick="
+        <button class="scissors-button" onclick="
           playGame('scissors');
           
-        ">Scissors</button>
+        "><img class="image-icon" src="images/scissors-emoji.png"></button>
 
-        <p class="js-result"></p>
-        <p class="js-moves"></p>
-        <p class="js-score"></p>
+        <p class="js-result result"></p>
+        <p class="js-move"></p>
+        <p class="js-score score"></p>
 
-        <button onclick="
+        <button class="reset-button" onclick="
         localStorage.removeItem('score');
             score.wins= 0,
             score.losses= 0,
@@ -43,6 +99,8 @@
                 losses: 0,
                 ties: 0
             };
+
+            
 
            updateScoreElement();
 
@@ -87,23 +145,20 @@
             } else if (result === 'Tie') {
                 score.ties += 1;
             }
+        
 
             localStorage.setItem('score', JSON.stringify(score));
-
+   
             updateScoreElement();
 
-            document.querySelector('js-result').innerHTML = result;
+            document.querySelector('.js-result').innerHTML = result;
 
-            document.querySelector('js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+            document.querySelector('.js-move').innerHTML = `You <img class="image-icon" src="images/${playerMove}-emoji.png"><img class="image-icon" src="images/${computerMove}-emoji.png"> Computer`;
 
-            alert(`You Picked ${playerMove}. Computer Picked ${computerMove}. ${result}
-Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
-           }
-
-
+        }
 
            function updateScoreElement(){
-            document.querySelector('.js-result')
+            document.querySelector('.js-score')
               .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
            }
 
