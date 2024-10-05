@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* The word "toggle" means turn on/off. */
+      .buttons {
+        background-color: rgb(230, 230, 230);
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .is-toggled {
+        background-color: black;
+        color: white;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button class="buttons js-gaming" onclick="
+    selectButton('gaming');
+    ">Gaming</button>
+
+    <button class="buttons js-music" onclick="
+    selectButton('music');
+    ">Music</button>
+
+    <button class="buttons js-tech" onclick="
+            selectButton('tech');
+    ">Tech</button>
+<script>
+    function selectButton(button){
+      const gamingElement = document.querySelector('.js-gaming');
+      const musicElement = document.querySelector('.js-music');
+      const techElement = document.querySelector('.js-tech');
+
+      if (button === 'gaming'){
+      if(!gamingElement.classList.contains('is-toggled')) {
+        gamingElement.classList.add('is-toggled');
+        musicElement.classList.remove('is-toggled');
+        techElement.classList.remove('is-toggled');
+      } else {
+        gamingElement.classList.remove('is-toggled');
+      }
+    } else if (button === 'music') {
+      if(!musicElement.classList.contains('is-toggled')) {
+        musicElement.classList.add('is-toggled');
+        gamingElement.classList.remove('is-toggled');
+        techElement.classList.remove('is-toggled');
+      } else {
+        musicElement.classList.remove('is-toggled');
+      }
+    } else if (button === 'tech') {
+      if(!techElement.classList.contains('is-toggled')) {
+        techElement.classList.add('is-toggled');
+        gamingElement.classList.remove('is-toggled');
+        musicElement.classList.remove('is-toggled');
+      } else {
+        techElement.classList.remove('is-toggled');
+      }
+    }
+  }
+        
+
+</script>
+  </body>
+</html>

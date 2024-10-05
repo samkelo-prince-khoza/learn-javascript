@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+
+      .input-box {
+        padding: 10px 0px;
+      }
+
+      .button {
+        padding: 12px 10px;
+        border: none;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+      }
+
+      .red-text {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <input class="input-box js-input"  placeholder="input value">
+
+    <button class="js-button button" onclick="
+    
+     inputValue();
+    ">Calculate</button>
+
+    <p class="js-value"></p>
+
+    <script>
+      function inputValue(){
+        const inputElement = document.querySelector('.js-input').value
+        
+        if (inputElement >= 0) {
+        if(inputElement < 50) {
+            document.querySelector('.js-value').classList.remove('red-text');
+            document.querySelector('.js-value').innerHTML = inputElement * 1 + 10;
+        } else {
+            document.querySelector('.js-value').classList.remove('red-text');
+            document.querySelector('.js-value').innerHTML = inputElement
+        }
+      } else {
+        document.querySelector('.js-value').classList.add('red-text');
+        document.querySelector('.js-value').innerHTML = 'Error: Cost can not be less than $0';
+      }
+    }
+    </script>
+  </body>
+</html>
